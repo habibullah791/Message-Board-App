@@ -1,0 +1,57 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message board homepage</title>
+    <style>
+        /* static/css/styles.css */
+
+/* Style the list of posts */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style individual post items */
+li {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+/* Style the post message text */
+li .message {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Style the user's name */
+li .user {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Style the post ID */
+li .id {
+    font-size: 14px;
+    color: #555;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Message board homepage</h1>
+    <ul>
+        {% for post in post_list %}
+            <li>
+                <span class="id">ID: {{ post.id }}</span><br>
+                <span class="user">User: {{ post.name }}</span>
+                <p class="message">{{ post.message }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
